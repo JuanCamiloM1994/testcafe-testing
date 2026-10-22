@@ -10,6 +10,8 @@ fixture`Getting started with TestCafe`
     })
     .beforeEach(async t => {
         // Runs before each test
+        await t.setTestSpeed(1)
+        await t.setPageLoadTimeout(0)
     })
     .after(async t => {
         // cleaning test data
