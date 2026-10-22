@@ -21,6 +21,8 @@ fixture`Getting started with TestCafe`
 
 test('My first TestCafe test', async t => {
     // here goes testcafe code
+
+    await t.setTestSpeed(1)
     await t.typeText("#developer-name", "Juan")
     await t.click("#submit-button")
 
