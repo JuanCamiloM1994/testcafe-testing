@@ -24,6 +24,7 @@ test('My first TestCafe test', async t => {
 
     await t.setTestSpeed(1)
     await t.typeText("#developer-name", "Juan")
+    await t.wait(3000)
     await t.click("#submit-button")
 
     await t.expect(Selector("#article-header").innerText).contains("Juan")
