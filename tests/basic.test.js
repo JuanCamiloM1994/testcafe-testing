@@ -25,9 +25,12 @@ test('My first TestCafe test', async t => {
     const name_input = Selector("#developer-name")
     const submit_button = Selector("#submit-button")
     const articleText = Selector("#article-header")
-    await t.setTestSpeed(1)
+
+    //await t.takeScreenshot({ fullPage: true})
+    //await t.takeElementScreenshot(submit_button)
+    //await t.setTestSpeed(1)
     await t.typeText(name_input, "Juan")
-    await t.wait(3000)
+    //await t.wait(3000)
     await t.click(submit_button)
 
     await t.expect(Selector(articleText).innerText).contains("Juan")
