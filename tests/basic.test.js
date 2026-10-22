@@ -36,6 +36,30 @@ test('My first TestCafe test', async t => {
     await t.click(submit_button)
 
     await t.expect(Selector(articleText).innerText).contains("Juan")
+
+/*     //click 
+    await t.click('selector', { options })
+    // double click
+    await t.doubleClick('selector', {options})
+    // right click
+    await t.rightClick('selector', {options})
+    // drag element 
+    await t.drag('selector', 200, 0, { options})
+    // hover
+    await t.hover('selector', {options})
+    // select text
+    await t.selectText('selector')
+    // type text 
+    await t.typeText('selectos', 'text')
+    // press key
+    await t.pressKey('key')
+    // navigate
+    await t.navigateTo('url')
+    // take screenshot 
+    await t.takeScreenshot()
+    await t.takeElementScreenshot()
+    // resize windows 
+    await t.resizeWindow(800,600) */
 })
 
 /* test.skip('My first TestCafe test', async t => {
