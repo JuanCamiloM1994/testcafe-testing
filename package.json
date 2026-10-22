@@ -12,7 +12,11 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "testcafe chrome ./tests"
+    "test:chrome": "testcafe chrome ./tests",
+    "test:chrome:headless": "testcafe chrome:headless ./tests",
+    "test:chrome:mobile": "testcafe chrome:emulation:device=iPhone X ./tests",
+    "test:safari": "testcafe safari ./tests",
+    "test:firefox": "testcafe firefox ./tests"
   },
   "dependencies": {
     "prettier": "^3.9.10",
