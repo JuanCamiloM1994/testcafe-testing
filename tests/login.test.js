@@ -24,7 +24,7 @@ test("User cannot login with invalid credentials", async t => {
     await t.expect(errorMessage).contains('Login and/or password are wrong.')
 })
 
-test("User can login with invalid credentials", async t => {
+test("User can login with valid credentials", async t => {
     const signInButton = Selector('#signin_button')
     await t.click(signInButton)
 
@@ -33,8 +33,8 @@ test("User can login with invalid credentials", async t => {
 
     const usernameInput = Selector('#user_login')
     const passwordInput = Selector('#user_password')
-    await t.typeText(usernameInput, 'invalid username', { paste: true })
-    await t.typeText(passwordInput, 'invalid password', { paste: true })
+    await t.typeText(usernameInput, 'username', { paste: true })
+    await t.typeText(passwordInput, 'password', { paste: true })
 
     const submiteButton = Selector('.btn-primary')
     await t.click(submiteButton)
