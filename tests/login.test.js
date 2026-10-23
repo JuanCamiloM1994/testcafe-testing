@@ -1,7 +1,7 @@
 import { Selector } from "testcafe";
 
 // prettier-ignore
-fixture`Getting started with TestCafe`
+fixture`Login test`
     .page`http://zero.webappsecurity.com/index.html`
 
 
@@ -51,5 +51,5 @@ test("User can login with invalid credentials", async t => {
 
     await t.expect(logoutButton.exists).notOk()
     await t.expect(signInButton.exists).ok()
-    
+
 })
