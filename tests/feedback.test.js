@@ -22,10 +22,10 @@ test("User can submit feedback via form", async t => {
     //Actions
 
     await t.click(linkToFeedback)
-    await t.typeText(form_name, 'NAME', { paste: true})
-    await t.typeText(form_email, 'EMAIL', { paste: true})
-    await t.typeText(form_subject, 'SUBJECT', { paste: true})
-    await t.typeText(form_comment, 'COMMENT', { paste: true})
+    await t.typeText(form_name, 'NAME', { paste: true })
+    await t.typeText(form_email, 'EMAIL', { paste: true })
+    await t.typeText(form_subject, 'SUBJECT', { paste: true })
+    await t.typeText(form_comment, 'COMMENT', { paste: true })
     await t.click(form_submitButton)
 
     //Assertion
