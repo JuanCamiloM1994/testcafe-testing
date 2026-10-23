@@ -17,7 +17,11 @@
     "test:chrome:mobile": "testcafe chrome:emulation:device=iPhone X ./tests -s takeOnFails=true",
     "test:safari": "testcafe safari ./tests -s takeOnFails=true",
     "test:firefox": "testcafe firefox ./tests -s takeOnFails=true",
-    "test:chrome:Login": "testcafe chrome --ignore-certificate-errors ./tests/login.test.js -s takeOnFails=true --page-request-timeout 60000"
+    "test:chrome:Login": "testcafe chrome ./tests/login.test.js -s takeOnFails=true",
+    "test:chrome:pay": "testcafe chrome ./tests/new-pay.test.js -s takeOnFails=true",
+    "test:chrome:search": "testcafe chrome ./tests/search.test.js -s takeOnFails=true",
+    "test:chrome:forgotten": "testcafe chrome ./tests/forgotten-password.test.js -s takeOnFails=true",
+    "test:chrome:feedback": "testcafe chrome ./tests/feedback.test.js -s takeOnFails=true"
   },
   "dependencies": {
     "prettier": "^3.9.10",

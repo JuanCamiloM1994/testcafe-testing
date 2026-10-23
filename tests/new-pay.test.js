@@ -1,18 +1,20 @@
 import { Selector } from "testcafe";
-
+import { login } from '../helper'
 // prettier-ignore
 fixture`New pay test`
     .page`http://zero.webappsecurity.com/index.html`
 
 test.before(async t => {
-    const signInButton = Selector('#signin_button')
-    await t.click(signInButton)
-    const usernameInput = Selector('#user_login')
-    const passwordInput = Selector('#user_password')
-    await t.typeText(usernameInput, 'username', { paste: true })
-    await t.typeText(passwordInput, 'password', { paste: true })
-    const submiteButton = Selector('.btn-primary')
-    await t.click(submiteButton)
+    /*     const signInButton = Selector('#signin_button')
+        await t.click(signInButton)
+        const usernameInput = Selector('#user_login')
+        const passwordInput = Selector('#user_password')
+        await t.typeText(usernameInput, 'username', { paste: true })
+        await t.typeText(passwordInput, 'password', { paste: true })
+        const submiteButton = Selector('.btn-primary')
+        await t.click(submiteButton) */
+
+    await login("username", "password")
 })
     ('User can add new pay to the list', async t => {
 
