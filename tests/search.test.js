@@ -1,4 +1,5 @@
 import { Selector } from "testcafe";
+import xPathToCSS from 'xpath-to-css'
 
 // prettier-ignore
 fixture`Search box test`
@@ -10,6 +11,11 @@ test('User can search for information using search box ', async t => {
     const resultsTile = Selector('h2')
     const linkText = Selector('div').innerText
 
+    // XPATH TO CSS Example
+    const xPath = `'//*[@id="onlineBankingMenu"]/div/strong'`
+    const css = xPathToCSS(xPath)
+    console.log(css)
+    
     //Actions
     await t.typeText(searchBox, 'online bank', { paste: true })
     await t.pressKey('enter')
