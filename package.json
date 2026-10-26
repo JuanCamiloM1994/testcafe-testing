@@ -14,6 +14,7 @@
   "scripts": {
     "test:chrome": "testcafe chrome ./tests -s takeOnFails=true",
     "test:chrome:5": "testcafe -c 5 chrome ./tests -s takeOnFails=true",
+    "test:multiple": "testcafe chrome,firefox ./tests -s takeOnFails=true",
     "test:chrome:headless:5": "testcafe -c 5 chrome:headless ./tests -s takeOnFails=true",
     "test:chrome:headless": "testcafe chrome:headless ./tests -s takeOnFails=true",
     "test:chrome:mobile": "testcafe chrome:emulation:device=iPhone X ./tests -s takeOnFails=true",
