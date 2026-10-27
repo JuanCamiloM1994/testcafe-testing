@@ -1,28 +1,21 @@
-import { Selector } from "testcafe";
 import xPathToCSS from 'xpath-to-css'
+import Navbar from "../page-objects/components/Navbar";
+import SearchResultsPages from "../page-objects/pages/SearchResultsPages";
 
-// prettier-ignore
+const navbar = new Navbar()
+const searhResultPages = new SearchResultsPages()
+
+
 fixture`Search box test`
     .page`http://zero.webappsecurity.com/index.html`
 
 test('User can search for information using search box ', async t => {
-    // Selectors
-    const searchBox = Selector('#searchTerm')
-    const resultsTile = Selector('h2')
-    const linkText = Selector('div').innerText
-
-    // XPATH TO CSS Example
     const xPath = `'//*[@id="onlineBankingMenu"]/div/strong'`
     const css = xPathToCSS(xPath)
     console.log(css)
-    
-    //Actions
-    await t.typeText(searchBox, 'online bank', { paste: true })
-    await t.pressKey('enter')
-
-    //Assertions
-    await t.expect(resultsTile.exists).ok()
-    await t.expect(searchBox.exists).ok()
-    await t.expect(linkText).contains('Zero - Free Access to Online Banking')
+    navbar.search('online bank')
+    await t.expect(searhResultPages.resultsTitle.exists).ok()
+    await t.expect(navbar.searchBox.exists).ok()
+    await t.expect(searhResultPages.linkText.innerText).contains('Zero - Free Access to Online Banking')
 
 })

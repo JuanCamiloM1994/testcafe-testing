@@ -1,24 +1,12 @@
 import { Selector } from "testcafe";
 import { login } from '../helper'
-// prettier-ignore
 fixture`New pay test`
     .page`http://zero.webappsecurity.com/index.html`
 
 test.before(async t => {
-    /*     const signInButton = Selector('#signin_button')
-        await t.click(signInButton)
-        const usernameInput = Selector('#user_login')
-        const passwordInput = Selector('#user_password')
-        await t.typeText(usernameInput, 'username', { paste: true })
-        await t.typeText(passwordInput, 'password', { paste: true })
-        const submiteButton = Selector('.btn-primary')
-        await t.click(submiteButton) */
-
     await login("username", "password")
 })
     ('User can add new pay to the list', async t => {
-
-        // Selectors
         const payBillsTab = Selector('#pay_bills_tab')
         const addNewPayeTab = Selector('a').withText('Add New Payee')
         const form_name = Selector('#np_new_payee_name')
@@ -27,8 +15,6 @@ test.before(async t => {
         const form_details = Selector('#np_new_payee_details')
         const form_submitButton = Selector('#add_new_payee')
         const message = Selector("#alert_content").innerText
-
-        //Actions
         await t.click(payBillsTab)
         await t.click(addNewPayeTab)
         await t.typeText(form_name, 'name', { paste: true })
@@ -36,7 +22,5 @@ test.before(async t => {
         await t.typeText(form_account, 'Account', { paste: true })
         await t.typeText(form_details, 'Details', { paste: true })
         await t.click(form_submitButton)
-
-        //Assertions
         await t.expect(message).contains('successfully created')
     })
